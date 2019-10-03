@@ -7,24 +7,24 @@ void main() {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
           Container(
-              decoration: BoxDecoration(
+            /*  decoration: BoxDecoration(
                 color: Colors.blue.shade100,
                 border: Border.all(
                   color: Colors.black,
                 ),
-              ),
+              ),*/
               margin: EdgeInsets.symmetric(vertical:2, horizontal:2),
               width: 200,
               child: Text(
-                'Strawberry Pavlova', style: TextStyle(color: Colors.black),textAlign: TextAlign.center,)
+                'Strawberry Pavlova', style: TextStyle(color: Colors.black,fontWeight: FontWeight.bold),textAlign: TextAlign.center,)
           ),
           Container(
-            decoration: BoxDecoration(
+           /* decoration: BoxDecoration(
               color: Colors.blue.shade100,
               border: Border.all(
                 color: Colors.black,
               ),
-            ),
+            ),*/
             margin: EdgeInsets.symmetric(vertical:2, horizontal:2),
             width: 200,
             child: Center(
@@ -34,12 +34,12 @@ void main() {
               ),
           ),
           Container(
-            decoration: BoxDecoration(
+           /* decoration: BoxDecoration(
               color: Colors.blue.shade100,
               border: Border.all(
                 color: Colors.black,
               ),
-            ),
+            ),*/
 
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -54,12 +54,12 @@ void main() {
             ),
           ),
           Container(
-            decoration: BoxDecoration(
+           /* decoration: BoxDecoration(
               color: Colors.blue.shade100,
               border: Border.all(
                 color: Colors.black,
               ),
-            ),
+            ),*/
             margin: EdgeInsets.symmetric(vertical:2, horizontal:2),
             width: 200,
             child: Row(
@@ -100,18 +100,19 @@ void main() {
   List<Widget> hey = [r1];
   runApp(MaterialApp(
       home: Scaffold(
-        body: SafeArea(
-          child: Row(
+        body: Row(
             children: <Widget>[
               r1,
               Expanded(flex: 1,
-                child: Container(
-                    child: Image(image: AssetImage('assets/pie.png'))),
+                child: Padding(
+                  padding: const EdgeInsets.only(left:52),
+                  child: Container(
+                      child: Image(image: AssetImage('assets/pie.png'))),
+                ),
               ),
             ],
           ),
         ),
-      )
   ),
   );
 }
