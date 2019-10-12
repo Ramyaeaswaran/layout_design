@@ -10,6 +10,29 @@ void main() {
   );
 }
 
+Widget imagedetails() {
+  return Image(
+    fit: BoxFit.cover,
+    image: AssetImage('assets/pie.png'),
+  );
+}
+
+Widget title() {
+  return Text(
+    'Strawberry Pavlova',
+    style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+    textAlign: TextAlign.center,
+  );
+}
+
+Widget description() {
+  return Text(
+    'Pavlova is a meringue-based dessert named after the russian ballerine AnnaPavlova.Pavlova features a crisp crust and soft,light inside,topped with fruits and whipped cream.',
+    style: TextStyle(color: Colors.black87),
+    textAlign: TextAlign.center,
+  );
+}
+
 Widget body(BuildContext context) {
   if (MediaQuery.of(context).orientation == Orientation.portrait) {
     return portrait();
@@ -46,20 +69,12 @@ class landscape extends StatelessWidget {
               Container(
                   //  margin: EdgeInsets.symmetric(vertical:2, horizontal:2),
                   width: 200,
-                  child: Text(
-                    'Strawberry Pavlova',
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
-                  )),
+                  child: title()),
               Container(
                 width: 200,
                 child: Center(
-                    child: Text(
-                  'Pavlova ia a meringue-based dessert named after the Russian ballerine AnnaPavlova.Pavlova features a crisp crust and soft,light inside,toped with fruits and cream',
-                  style: TextStyle(color: Colors.black87),
-                  textAlign: TextAlign.center,
-                )),
+                  child: description(),
+                ),
               ),
               Wrap(
                 direction: Axis.vertical,
@@ -72,10 +87,10 @@ class landscape extends StatelessWidget {
                       Icon(Icons.star, color: Colors.black54),
                       Icon(Icons.star, color: Colors.black54),
                       Container(
-                       child:Text(
-                        '170 Reviews',
-                        overflow: TextOverflow.ellipsis,
-                      ),
+                        child: Text(
+                          '170 Reviews',
+                          //overflow: TextOverflow.ellipsis,
+                        ),
                       ),
                     ],
                   ),
@@ -84,30 +99,51 @@ class landscape extends StatelessWidget {
               Container(
                 margin: EdgeInsets.symmetric(vertical: 2, horizontal: 2),
                 width: 200,
-                child: Row(
+                child:Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        Icon(Icons.book, color: Colors.green),
+                        Icon(
+                          Icons.check_circle_outline,
+                          color: Colors.green,
+                        ),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Text('PREP:'),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Text('25 min'),
                       ],
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
-                        Icon(Icons.check_circle_outline, color: Colors.green),
+                        Icon(Icons.timer, color: Colors.green),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Text('COOK:'),
-                        Text('1 hr'),
+                        SizedBox(
+                          height: 5,
+                        ),
+                        Text('1 hour'),
                       ],
                     ),
                     Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: <Widget>[
                         Icon(Icons.person, color: Colors.green),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Text('FEED:'),
+                        SizedBox(
+                          height: 5,
+                        ),
                         Text('4-6'),
                       ],
                     ),
@@ -118,16 +154,11 @@ class landscape extends StatelessWidget {
           ),
         ),
         Expanded(
-          flex: 1,
+          flex: 2,
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Expanded(
-                child: Image(
-                  image: AssetImage('assets/pie.png'),
-                  fit: BoxFit.cover,
-                ),
-              ),
+              Expanded(child: imagedetails()),
             ],
           ),
         ),
@@ -143,12 +174,7 @@ class portrait extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         Expanded(
-          child: Container(
-            child: Image(
-              fit: BoxFit.cover,
-              image: AssetImage('assets/pie.png'),
-            ),
-          ),
+          child: Container(child: imagedetails()),
         ),
         Expanded(
           child: Column(
@@ -157,19 +183,11 @@ class portrait extends StatelessWidget {
               Container(
                   //  margin: EdgeInsets.symmetric(vertical:2, horizontal:2),
                   width: 200,
-                  child: Text(
-                    'Strawberry Pavlova',
-                    style: TextStyle(
-                        color: Colors.black, fontWeight: FontWeight.bold),
-                    textAlign: TextAlign.center,
-                  )),
+                  child: title()),
               Container(
-                  width: 200,
-                  child: Text(
-                    'Pavlova ia a meringue-based dessert named after the Russian ballerine AnnaPavlova.Pavlova features a crisp crust and soft,light inside,toped with fruits and cream',
-                    style: TextStyle(color: Colors.black87),
-                    textAlign: TextAlign.center,
-                  )),
+                width: 200,
+                child: description(),
+              ),
               Wrap(
                 direction: Axis.vertical,
                 children: <Widget>[
@@ -194,46 +212,46 @@ class portrait extends StatelessWidget {
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 5),
-                        child: Icon(
-                          Icons.check_circle_outline,
-                          color: Colors.green,
-                        ),
+                      Icon(
+                        Icons.check_circle_outline,
+                        color: Colors.green,
+                      ),
+                      SizedBox(
+                        height: 5,
                       ),
                       Text('PREP:'),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 5),
-                        child: Text('25 min'),
+                      SizedBox(
+                        height: 5,
                       ),
+                      Text('25 min'),
                     ],
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 5),
-                        child: Icon(Icons.timer, color: Colors.green),
+                      Icon(Icons.timer, color: Colors.green),
+                      SizedBox(
+                        height: 5,
                       ),
                       Text('COOK:'),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 5),
-                        child: Text('1 hr'),
+                      SizedBox(
+                        height: 5,
                       ),
+                      Text('1 hour'),
                     ],
                   ),
                   Column(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 5),
-                        child: Icon(Icons.person, color: Colors.green),
+                      Icon(Icons.person, color: Colors.green),
+                      SizedBox(
+                        height: 5,
                       ),
                       Text('FEED:'),
-                      Padding(
-                        padding: const EdgeInsets.only(top: 5),
-                        child: Text('4-6'),
+                      SizedBox(
+                        height: 5,
                       ),
+                      Text('4-6'),
                     ],
                   ),
                 ],
