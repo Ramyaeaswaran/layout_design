@@ -77,11 +77,9 @@ class landscape extends StatelessWidget {
                 ),
               ),
               Wrap(
-                direction: Axis.vertical,
+                alignment: WrapAlignment.center,
                 children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      Icon(Icons.star, color: Colors.black54),
+                  Icon(Icons.star, color: Colors.black54),
                       Icon(Icons.star, color: Colors.black54),
                       Icon(Icons.star, color: Colors.black54),
                       Icon(Icons.star, color: Colors.black54),
@@ -92,8 +90,6 @@ class landscape extends StatelessWidget {
                           //overflow: TextOverflow.ellipsis,
                         ),
                       ),
-                    ],
-                  ),
                 ],
               ),
               Container(
